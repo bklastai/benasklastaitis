@@ -1,0 +1,1043 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body>
+        
+          
+            
+            
+            
+          
+          <div>
+            
+            <h1>bitStep Team Feedback</h1>
+            <div>
+              <h2>The User’s Experience</h2>
+
+<p>Your app is fun. When I play with it, I want to <em>keep</em> playing with it!</p>
+
+<p>Its geometric, minimalist look is pleasing, and you did a nice job of refining the app without losing that. It has very little explanation; instead, it rewards exploration. Paige (my wife) tested it, and quickly figured it out with no instruction. You’ve already correctly identified what usability problems it has, particularly the unintuitive button icons. Overall, though, the usability is good.</p>
+
+<p>It is releasable? It’s close; there are two problems standing in your way.</p>
+
+<p>First, the missing save feature is a serious issue. It’s just too frustrating to invest so much time in something and then lose it. You <em>might</em> be able to get away with not having a save feature if it were only a 16x16 grid, but the multi-grid feature encourage a serious time investment that make a save feature a must-have. The multi-grid feature also does not feel as polished as the rest of the app. It would have been better to hold off implementing multiple grids until <em>after</em> you got save working. That was a planning mistake.</p>
+
+<p>Second, the timing is off. The beat is curiously irregular, enough that it doesn’t work musically. I don’t see the obvious problem in your code that’s causing this, so it may be a limitation of SoundPool itself. Whatever it is, you’ll need to track it down and fix it before you’re ready to release the app. That’s a technical problem to have tackled early on in the semester, in case it requires serious rearchitecting (e.g. abandoning SoundPool altogether).</p>
+
+<h2>Code and Other Internals</h2>
+
+<p>You surmounted several difficulties in this implementation: dealing with Android UI, sound playback, and threading. Good job getting on top of all those pieces.</p>
+
+<p>Your code is generally good on the 1-to-5-line scale, but not ideally organized on the 20+ line scale. There’s not a clear division of labor between classes, and MainActivity is a few too many things at once. You could clean things up by tackling two questions:</p>
+
+<ul>
+<li>What information should Instrument, Song, and BGM each have — and how much of that information can they hide from other classes?</li>
+<li>What parts of MainActivity can you split into smaller methods, or separate classes?</li>
+</ul>
+
+<p>There are further tips in the code below.</p>
+
+<p>Despite this, your basic approach to things is sound. You’ve generally kept the code readable, and have clearly put some effort into mopping things up, keeping messes under control, and thinking about the how other people will make sense of your code.</p>
+
+<h2>Demo</h2>
+
+<p>Good intro, and the explanation of what a step sequencer is was <em>almost</em> awesome. The key missing info is the twin restrictions of quantized time and a fixed instrument per row that make a grid possible.</p>
+
+<p>Good usage narrative. You helped the audience experience it as a user. The one missing piece: make an awesome rhythm! Plan one in advance if necessary. The new grid feature needed both better motivation &amp; better explanation.</p>
+
+<p>In the tech talk, mind the arrows in your diagram! What does the direction mean? (Don&#39;t views use the model?) Decide what arrows mean, and stick with it. Many good thoughts as you walked through the architecture, but the order was hard to follow.</p>
+
+<p>Good explanation of Freesound, licensing, and memory &amp; formats. That probably opened a few eyes about how much work it is to build an app with lots of little resources like sounds or images. Good discussion of usability. Highly engaging explanation of thread issues. On the both the threading and bug list slides: reduce the bullets, and put less on each slide so that we can listen to you.</p>
+
+<p>A terminology correction: the word is &quot;interactive,&quot; not &quot;interactable.&quot;</p>
+
+<h2>Things to Fix / Improve / Add</h2>
+
+<p>Here’s my list of bugs, usability issues, and suggested improvements for you to consider:</p>
+
+<ul>
+<li>Save feature!</li>
+<li>Beats aren’t regular. The timing irregularities almost give it character, but … mostly just sound wrong.</li>
+<li>Touching a square while playing sometimes doesn’t register</li>
+<li>Can’t add / change grid list while playing</li>
+<li>Switching instruments always shows the last grid, no matter which one is selected.</li>
+<li>Tempo slider shows up backwards sometimes?</li>
+<li>App doesn’t respect device orientation (i.e. can’t turn it upside down)</li>
+<li>Cramped layout for grid layout. Needs breathing room around text &amp; margin to top of screen.</li>
+<li>As you pointed out, the icons for tempo and “play when touched” are unclear.</li>
+<li>Isn’t your app called “bitStep?” Still shows up as “Step Sequencer” when installed.</li>
+</ul>
+
+<h2>Final Thoughts</h2>
+
+<p>You’ve pulled off a good product. Some loose ends, yes, but the bottom line is that it works and it’s fun!</p>
+
+<p>That’s a fine accomplishment for any team, but especially good considering you team’s lack of cohesion in the first half of the semester. The degree to which you were able to come together and focus yourselves was impressive. If you can bottle whatever magic you used so that I can give it to other struggling teams next time around, please let me know! In all seriousness, I would be interested to hear from each of you about your strategies for finding team cohesion.</p>
+
+<p>Good work this semester.</p>
+
+<div>Team project grade: 92 / 100</div>
+
+            </div>
+            
+            <h1>Individual Feedback</h1>
+            <div>
+              <p>Benas —</p>
+
+<p>You were the motor that drove your team. You always showed great initiative, and produced lots of output — even when you were busy with your capstone. It’s not just a matter of experience or Android expertise; it’s a matter of enthusiasm for <em>doing</em> things. Your team would not have accomplished what they did without your energy, and your teammates all recognize this!</p>
+
+<p>With that energy comes a tendency to charge off in the wrong direction. Your haste to follow your notions and implement things sometimes undermined your team’s ability to form coherent long-term plans. Respect the priorities your teammates set! It’s not helpful to add code that doesn’t work in support of the team’s current goals — even if it’s good code. You are a motor; you need a rudder. Keep that in mind: let your teammates steer you, even when it is frustrating to be steered. Show up for the meetings on time. Follow through on your current tasks. Don’t work on something else if it’s not time to work on it, no matter how cool it is!</p>
+
+<p>Putting it differently, passion needs discipline — and discipline needs passion. The two don’t always come from the same person on a team, and that’s fine, as long as they work in concert.</p>
+
+<p>Above all, keep your passion! It is admirable, and I’m sure it will lead to much good work in the future like the work you did this semester.</p>
+
+<div>Individual project grade: 94 / 100</div>
+
+            </div>
+
+            <h1>Code Notes</h1>
+            <p>My general feedback is above. I&#39;ve given some specific reactions and specific ideas for next steps in the code below. These notes are not a checklist of things that will make the code perfect; they are starting points for thinking about ways to improve it.</p>
+            <p>You know your code better than I do, so I may be pointing out things you already knew about, or I may be unaware of tradeoffs you consciously made.</p>
+            <p>Feel free to ask questions.</p>
+
+            <h2><span>app/src/main/java/edu/<wbr>dkim2macalester/stepsequencer/<wbr>controller/</span>MainActivity.java</h2><div>package edu.dkim2macalester.<wbr>stepsequencer.controller;
+
+
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
+import android.content.<wbr>DialogInterface;
+import android.content.pm.<wbr>ActivityInfo;
+import android.os.Bundle;
+import android.support.v7.app.<wbr>ActionBarActivity;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.GridView;
+import android.widget.SeekBar;
+import android.widget.TextView;
+
+import edu.dkim2macalester.<wbr>stepsequencer.R;
+import edu.dkim2macalester.<wbr>stepsequencer.model.<wbr>BooleanGridModel;
+import edu.dkim2macalester.<wbr>stepsequencer.model.<wbr>Instrument;
+import edu.dkim2macalester.<wbr>stepsequencer.model.Song;
+import edu.dkim2macalester.<wbr>stepsequencer.model.Sound;
+import edu.dkim2macalester.<wbr>stepsequencer.view.<wbr>GridItemAdapter;
+
+
+public class MainActivity extends ActionBarActivity {
+
+    Context context = this;  <div>What?</div>
+    private int size = 16;   <div>Should be a property of Song</div>
+    private int tempo = 40;  <div>ditto</div>
+    <div>These next two should be localized to the small piece of code that deals with the tempo dialog</div>
+    private int tempTempo;
+    private int tempoMin = 80; //Needed for UI (Seekbar minimum value is always 0)
+    private GridView gridView;
+    private GridItemAdapter adapter;
+
+    private Instrument instrument = new Instrument();
+    private Song song = new Song();
+    private BooleanGridModel BGM; <div>In Java, variable names should be lowercase unless they’re constants: bgm, not GBM</div>
+    private static int drumsetColor;
+
+    <div>The playback stuff belongs in a separate class; then you don’t need this dire warning.</div>
+    //DO NOT EVER EVER USE THIS VARIABLE. instead use methods isPlaying and setPlaying - for threadsafety reasons
+    private boolean isPlaying = false; //flag to see whether or not the app is currently playing sound
+    private boolean muteActivated = false;
+
+    @Override
+    protected void onCreate(final Bundle savedInstanceState) {
+        super.onCreate(<wbr>savedInstanceState);
+        setRequestedOrientation(<wbr>ActivityInfo.SCREEN_<wbr>ORIENTATION_LANDSCAPE);
+        setContentView(R.layout.main_<wbr>activity_layout);
+        drumsetColor = R.drawable.white_square_pink_<wbr>filling;  <div>The kit/color mapping should live in only one place, probably a property of Instrument.</div>
+
+        //Get model data
+        BGM = song.getCurrentBGM();
+
+        //Set up the gridview adapter
+        gridView = (GridView) findViewById(R.id.gridview);
+        adapter = new GridItemAdapter(this);
+        gridView.setAdapter(adapter);
+
+        instrument.initiateSound();
+
+        instrument.loadDeepHouseKit(<wbr>this);
+
+        gridView.<wbr>setOnItemClickListener(new AdapterView.<wbr>OnItemClickListener() {
+            public void onItemClick(AdapterView&lt;?&gt; parent, View v, int position, long id) {
+                if (!BGM.isSelected(position)) {
+                    v.setBackgroundResource(<wbr>drumsetColor);
+                    adapter.editDrawableID(<wbr>position, drumsetColor);
+                    //for playing sound on grid-cell-touch
+                    if (!muteActivated) {
+                        Sound s = (Sound) instrument.accessSoundArray().<wbr>get(BGM.getSample(position));
+                        instrument.accessSoundPool().<wbr>play(s.getSoundResourceId(), 1, 1, 3, 0, 1);
+                    }
+                } else {
+                    v.setBackgroundResource(R.<wbr>drawable.white_frame);
+                    adapter.editDrawableID(<wbr>position, R.drawable.white_frame);
+                }
+                BGM = new BooleanGridModel(BGM.<wbr>getBooleanArray(), position);
+                song.setCurrentBGM(BGM); //updates song with new BGM
+
+            }
+        });
+
+        final Button play = (Button) findViewById(R.id.play);
+        play.setBackgroundResource(R.<wbr>drawable.play1_no_border);
+        play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!isPlaying()) {
+                    Runnable r = new PlayThread();
+                    new Thread(r).start();
+                    play.setBackgroundResource(R.<wbr>drawable.pause1_no_border);
+                } else {
+                    play.setBackgroundResource(R.<wbr>drawable.play1_no_border);
+                    setPlaying(false);
+                }
+            }
+        });
+
+        final Button next = (Button) findViewById(R.id.next_grid);
+        next.setVisibility(View.GONE);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!isPlaying()) {
+                    BGM = song.getNextBGM();
+                    <div>Given that these next three calls often or always occur in sequence, they should probably be subcalls of just one “updateUI()” method</div>
+                    updateAdapter_oneBGM(BGM);
+                    fixNavIcons();
+                    fixBGMIndexIndicator();
+                }
+            }
+        });
+
+
+
+        final Button previous = (Button) findViewById(R.id.previous_<wbr>grid);
+        previous.setVisibility(View.<wbr>INVISIBLE);
+        previous.setOnClickListener(<wbr>new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!isPlaying()) {
+                    BGM = song.getPreviousBGM();
+                    updateAdapter_oneBGM(BGM);
+                    fixNavIcons();
+                    fixBGMIndexIndicator();
+                }
+            }
+        });
+
+
+        final Button add = (Button) findViewById(R.id.add_<wbr>gridview);
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!isPlaying() &amp;&amp; song.getBGMListSize() &lt; 5) {  <div>Move hard-coded 5 into a constant, so knowledge of max number of grids live in only one place</div>
+                    BGM = song.addBGM();
+                    updateAdapter_oneBGM(BGM);
+                    fixNavIcons();
+                    fixBGMIndexIndicator();
+                }
+            }
+        });
+
+
+        final Button clear = (Button) findViewById(R.id.clear);
+        clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                BGM = new BooleanGridModel();
+//                song.setCurrentBGM(BGM);
+//                updateAdapter_oneBGM(song.<wbr>getCurrentBGM());
+                if (!song.isEmpty()){
+                    setPlaying(false);
+                    play.setBackgroundResource(R.<wbr>drawable.play1_no_border);
+                    confirmClear(v);
+                }
+            }
+        });
+
+
+        final Button mute = (Button) findViewById(R.id.mute);
+        mute.setBackgroundResource(R.<wbr>drawable.sound_active1_no_<wbr>border);
+        mute.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switchMuteConfig();
+                if (muteActivated) {
+                    v.setBackgroundResource(R.<wbr>drawable.sound_inactive1_no_<wbr>border);
+                } else {
+                    v.setBackgroundResource(R.<wbr>drawable.sound_active1_no_<wbr>border);
+                }
+            }
+        });
+
+        final Button instruments = (Button) findViewById(R.id.instruments)<wbr>;
+        instruments.<wbr>setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                setPlaying(false);
+                play.setBackgroundResource(R.<wbr>drawable.play1_no_border);
+                showInstruments(v);
+            }
+        });
+
+        final Button settings = (Button) findViewById(R.id.music_<wbr>options);
+        settings.setOnClickListener(<wbr>new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setPlaying(false);
+                play.setBackgroundResource(R.<wbr>drawable.play1_no_border);
+
+                final Dialog yourDialog = new Dialog(context);
+                yourDialog.setContentView(R.<wbr>layout.seekerdialog);
+                yourDialog.setTitle(&quot;Settings&quot;<wbr>);
+
+
+                //tempo seeker
+                final TextView tempoView = (TextView) yourDialog.findViewById(R.id.<wbr>currentTempo);
+                tempoView.setText(Integer.<wbr>toString(tempo + tempoMin));
+                final SeekBar tempoSetter = (SeekBar)yourDialog.<wbr>findViewById(R.id.temposeeker)<wbr>;
+                tempoSetter.setMax(80);
+                tempoSetter.setProgress(tempo + tempoMin);
+//                //Maybe add a global tempo holder
+                tempoSetter.<wbr>setOnSeekBarChangeListener(new SeekBar.<wbr>OnSeekBarChangeListener(){
+                    @Override
+                    public void onStopTrackingTouch(SeekBar arg0){}
+                    @Override
+                    public void onStartTrackingTouch(SeekBar arg0){}
+                    @Override
+                    public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2){
+                        tempoView.setText(Integer.<wbr>toString(arg1 + tempoMin));
+                        tempTempo = arg1;
+                        //tempoSetter.setProgress(arg1 + tempoMin);
+                    }
+                });
+
+                Button savedSettings = (Button) yourDialog.findViewById(R.id.<wbr>setchanged);
+                savedSettings.<wbr>setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        tempo = tempTempo; <div>You don’t need tempTempo at all; use tempoSetter.getProgress()</div>
+                        yourDialog.dismiss();
+                    }
+                });
+                Button cancelSettings = (Button) yourDialog.findViewById(R.id.<wbr>setcancel);
+                cancelSettings.<wbr>setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        yourDialog.dismiss();
+                    }
+                });
+                yourDialog.show();
+            }
+        });
+
+
+        final TextView BGMIndex = (TextView) findViewById(R.id.BGMIndex);
+        BGMIndex.setText(&quot;1/1&quot;);
+
+
+    }
+
+    public void fixBGMIndexIndicator(){
+        TextView indexView = (TextView) findViewById(R.id.BGMIndex);
+        indexView.setText((song.<wbr>getCurrentBGMIndex()+1)+&quot;/&quot;+<wbr>song.getBGMListSize());
+    }
+
+    public void fixNavIcons(){
+        <div>This logic is much more tangled than it needs to be.</div>
+        if (song.getCurrentBGMIndex() == 0){
+            if (song.getBGMListSize() == 1){
+                findViewById(R.id.next_grid).<wbr>setVisibility(View.GONE);
+                findViewById(R.id.add_<wbr>gridview).setVisibility(View.<wbr>VISIBLE);
+            }
+            else {
+                findViewById(R.id.next_grid).<wbr>setVisibility(View.VISIBLE);
+                findViewById(R.id.add_<wbr>gridview).setVisibility(View.<wbr>GONE);
+            }
+            findViewById(R.id.previous_<wbr>grid).setVisibility(View.<wbr>INVISIBLE);
+        }
+        else {
+            if (song.getCurrentBGMIndex() == song.getBGMListSize() - 1 &amp;&amp; song.getCurrentBGMIndex() != 4){
+                findViewById(R.id.next_grid).<wbr>setVisibility(View.GONE);
+                findViewById(R.id.add_<wbr>gridview).setVisibility(View.<wbr>VISIBLE);
+            }
+            else if (song.getCurrentBGMIndex() == song.getBGMListSize()-1) {
+                findViewById(R.id.next_grid).<wbr>setVisibility(View.GONE);
+                findViewById(R.id.add_<wbr>gridview).setVisibility(View.<wbr>GONE);
+            }
+            else {
+                findViewById(R.id.next_grid).<wbr>setVisibility(View.VISIBLE);
+                findViewById(R.id.add_<wbr>gridview).setVisibility(View.<wbr>GONE);
+            }
+            findViewById(R.id.previous_<wbr>grid).setVisibility(View.<wbr>VISIBLE);
+        }
+    }
+
+    public void switchMuteConfig(){
+        muteActivated = !muteActivated;
+    }
+
+
+    public void showInstruments(View view){
+        Dialog d = new AlertDialog.Builder(this, AlertDialog.THEME_HOLO_DARK)
+                .setTitle(&quot;Select a Drum Kit&quot;)
+                .setItems(new String[]{&quot;808 Kit&quot;, &quot;Kc Kit&quot;,&quot;Deep House Kit&quot;}, new DialogInterface.<wbr>OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dlg, int position) {
+                        if (position == 0) {
+                            drumsetColor = R.drawable.white_square_blue_<wbr>filling;
+                            instrument.load808Kit(<wbr>MainActivity.this);
+                        } else if (position == 1) {
+                            drumsetColor = R.drawable.white_square_green_<wbr>filling;
+                            instrument.loadKcKit(<wbr>MainActivity.this);
+                        } else if (position == 2) {
+                            drumsetColor = R.drawable.white_square_pink_<wbr>filling;
+                            instrument.loadDeepHouseKit(<wbr>MainActivity.this);
+                        }
+                        updateAdapter_allBGMs();
+                    }
+                })
+                .create();
+        d.show();
+    }
+
+    public void confirmClear(View view){
+        Dialog d = new AlertDialog.Builder(this, AlertDialog.THEME_HOLO_DARK)
+                .setTitle(&quot;Clear&quot;)
+                .setItems(new String[]{&quot;Clear contents of current grid&quot;, &quot;Delete this grid&quot;, &quot;Delete all grids&quot;}, new DialogInterface.<wbr>OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dlg, int position) {
+                        if (position == 0) {
+                            BGM = new BooleanGridModel();
+                            song.setCurrentBGM(BGM);
+                            updateAdapter_oneBGM(song.<wbr>getCurrentBGM());
+                        } else if (position == 1) {
+                            if (song.getBGMListSize() &gt; 1){
+                                song.deleteCurrentBGM();
+                                song.setCurrentBGMIndex(song.<wbr>getCurrentBGMIndex() - 1);
+                                BGM = song.getCurrentBGM();
+                                updateAdapter_oneBGM(BGM);
+                                fixNavIcons();
+                                fixBGMIndexIndicator();
+//                                song.<wbr>fixBGMListOrderAfterDeletingEl<wbr>ement(int position);
+                            }
+                            else {//this scneraio assumes people confuse &quot;clear&quot; and &quot;delete&quot; when they have one grid
+                                BGM = new BooleanGridModel();
+                                song.setCurrentBGM(BGM);
+                                updateAdapter_oneBGM(song.<wbr>getCurrentBGM());
+                            }
+                        } else if (position == 2) {
+                            song = new Song();
+                            BGM = new BooleanGridModel();
+                            song.setCurrentBGM(BGM);
+                            updateAdapter_oneBGM(song.<wbr>getCurrentBGM());
+                            fixNavIcons();
+                            fixBGMIndexIndicator();
+                        }
+                    }
+                })
+                .setNegativeButton(&quot;Cancel&quot;, null)
+                .create();
+        d.show();
+    }
+
+
+    <div>Don’t use underscores in Java method names. You could just call these next two updateBgmAdapters() and updateBgmAdapter().</div>
+    <div>I’m unclear on why this method to update all the BGMs at once exists. Since updateAdapter_oneBGM() updates the same adapter no matter which GBM is selected, doesn’t updateAdapter_allBGMs just keep overwriting the adapter values, leaving only the last BGM’s values in place? I think this is causing the bug where switching instruments shows the last BGM even when a different one is selected.</div>
+    public void updateAdapter_allBGMs(){
+        for (int i = 0; i &lt; song.getBGMListSize(); i++) {
+            BGM = song.getBGMByIndex(i);
+            updateAdapter_oneBGM(BGM);
+        }
+    }
+
+    public void updateAdapter_oneBGM(<wbr>BooleanGridModel bgm){
+        for (int i = 0; i &lt; bgm.getBGMSize(); i++){
+            if (bgm.isSelected(i)){
+                adapter.editDrawableID(i, drumsetColor);
+            }
+            else {
+                adapter.editDrawableID(i, R.drawable.white_frame);
+            }
+        }
+        adapter.notifyDataSetChanged()<wbr>;
+    }
+
+
+    class PlayThread implements Runnable {
+        <div>Good overall organization of this class’s methods.</div>
+
+        @Override
+        public void run() {
+            setPlaying(true);
+            while (isPlaying()) {
+                if (playSong()) break; <div>Confusing to use both isPlaying() and break; pick one or the other</div>
+            }
+        }
+
+        private boolean playSong() {
+            for (int k = 0; k &lt; song.getBGMListSize(); k++) { //TODO WORRIED about threadsafety of this code wrt Song
+                song.setCurrentBGMIndex(k);
+                BGM = song.getCurrentBGM(); //get the kth grid
+
+                switchUiNextGrid();//makes a runnable for updating gridview adapter
+                switchUiNavIcons();
+                switchUiBGMIndeces();
+
+                if (playGrid(k)) return true; //breaks play loop if the user has pressed pause
+            }
+            return false;
+        }
+
+        <div>The naming convention here (switch* → fix*) is confusing; it seems to mean more than it does.</div>
+        private void switchUiBGMIndeces(){
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    fixBGMIndexIndicator();
+                }
+            });
+        }
+
+        private void switchUiNavIcons() {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    fixNavIcons();
+                }
+            });
+        }
+
+        private void switchUiNextGrid() {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    updateAdapter_oneBGM(BGM);
+                }
+            });
+        }
+
+        private boolean playGrid(final int gridNum) {
+            for (int i = 0; i &lt; size; i++){ //looping through beats (aka timestamps/columns)
+                if (!isPlaying()) { //breaks play loop if the user has pressed pause
+                    return true;
+                }
+                <div>Access to song here is unsynchronized</div>
+                BGM = song.getBGMByIndex(gridNum); //pulls updated grid if changes have been made
+                playBeat(gridNum, i);
+            }
+            return false;
+        }
+
+        private void playBeat(int gridNum, int beatNum) {
+            highlightBeat(gridNum, beatNum, true); //true means highlight the beat
+            for (int j = 0; j &lt; size; j++) { //looping through samples (aka y-axis/scale)
+                <div>This (j * size) + beatNum logic really belongs in BGM, not here. Probably better to make isSelected accept two args, instrument and beat, instead of a single index.</div>
+                if(BGM.isSelected((j * size) + beatNum)){
+                    Sound s = (Sound) instrument.accessSoundArray().<wbr>get(BGM.getSample((j * size) + beatNum));
+                    instrument.accessSoundPool().<wbr>play(s.getSoundResourceId(),1,<wbr>1,3,0,1); //(binary arguments) left speaker, right speaker, priority, looping, speed of playback
+                }
+            }
+            try{
+                <div>Careful! You’re making unsynchronized usage of tempo and tempoMin, which are properties of the activity set on the main thread.</div>
+                <div>Making the playback stuff a separate class would have prevented this mistake.</div>
+                Thread.sleep(60000 / ((tempo + tempoMin) * 4)); //tempo (bpm) is converted into milliseconds
+            } catch(InterruptedException e){
+                System.out.println(&quot;<wbr>Interrupted&quot;);
+            }
+            highlightBeat(gridNum, beatNum, false); //false means unhighlight the beat
+        }
+
+        private void highlightBeat(final int gridNum, final int beatNum, final boolean highlighted) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    if (song.getCurrentBGMIndex() == gridNum) {
+                        for (int j = 0; j &lt; size; j++) { //looping through samples (aka y-axis)
+                            if (!BGM.isSelected((j*size)+<wbr>beatNum)){
+                                if (highlighted) {
+                                    adapter.editDrawableID((j*<wbr>size)+beatNum, R.drawable.grey_square_filled)<wbr>;
+                                }
+                                else {
+                                    adapter.editDrawableID(j*size+<wbr>beatNum, R.drawable.white_frame);}
+                            }
+                        }
+                        adapter.notifyDataSetChanged()<wbr>;
+                    }
+                }
+            });
+        }
+
+    }
+
+    private synchronized boolean isPlaying(){
+        return isPlaying;
+    }
+
+    private synchronized void setPlaying(boolean state){
+      isPlaying = state;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present (it&#39;s not).
+        getMenuInflater().inflate(R.<wbr>menu.menu_grid__layout, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        return super.onOptionsItemSelected(<wbr>item);
+    }
+
+}</div><h2><span>app/src/main/java/edu/<wbr>dkim2macalester/stepsequencer/<wbr>model/</span>BooleanGridModel.java</h2><div> package edu.dkim2macalester.<wbr>stepsequencer.model;
+
+/**
+ * Thread-safe immutable class holds &#39;state of the beat&#39; - boolean array keeps track of what&#39;s been pressed.
+ *
+ * Created by mju on 3/23/2015.
+ */
+
+public final class BooleanGridModel {
+
+    private final int width = 16;
+    private final int height = 16;
+    private final boolean[] selections;
+
+    public BooleanGridModel(){ //if no model passed in, inits to all-0 grid
+        boolean[] temp = new boolean[width*height];
+        for (int i = 0; i &lt; temp.length; i++){
+            temp[i]= false;
+        }
+        selections = temp;
+    }
+
+    //constructs a class with the given boolean
+    // array AND selects the grid at the
+    // specified position (Song&#39;s current BGM is updated
+    // to this one when grid cells are clicked)
+    <div>Being a copy constructor, this should take a BooleanGridModel as its argument, instead of exposing the internal array. Why? Well…</div>
+    public BooleanGridModel(boolean[] temp, int position){
+        selections = temp; <div>…you&#39;re not copything the array here, but rather retaining a reference to the one that was passed in, and…</div>
+        selections[position] = !isSelected(position);
+    }
+
+    public int getSample(int position) { return (position - position % width) / height; }
+
+    public boolean isSelected(int position) {
+        return selections[position];
+    }
+
+    public int getBGMSize() {
+        return selections.length;
+    }
+
+    <div>…this getter exposes the internal array, which means that it can break immutability, depending on what the caller does with it.</div>
+    <div>This only place this method is used is when copying a BGM. The net effect is that you only have one boolean[] ever for each grid, and even though you keep creating new instances of BGM, you&#39;re passing that same array between them.</div>
+    <div>This defeats the point of having an immutable model. The solution is to (1) remove this getter, (2) have the constructor take a BGM instead of an array, and (3) copy the array inside the constructor using Arrays.copyOf().</div>
+    public boolean[] getBooleanArray(){
+        return selections;
+    }
+
+    public boolean isEmpty(){
+        for (int i=0; i&lt;selections.length; i++){
+            if (isSelected(i)){
+                return false;
+            }
+        }
+        return true;
+    }
+
+}
+</div><h2><span>app/src/main/java/edu/<wbr>dkim2macalester/stepsequencer/<wbr>model/</span>Instrument.java</h2><div>package edu.dkim2macalester.<wbr>stepsequencer.model;
+
+import android.content.Context;
+import android.media.AudioManager;
+import android.media.SoundPool;
+
+import java.util.ArrayList;
+
+import edu.dkim2macalester.<wbr>stepsequencer.R;
+
+/**
+ * Created by aronthomas on 4/30/15.
+ */
+<div>Better name would probably be InstrumentKit or InstrumentSet</div>
+public class Instrument {
+
+    private SoundPool soundPool;
+    private ArrayList&lt;Sound&gt; mSounds = new ArrayList&lt;&gt;();
+
+    public void initiateSound (){
+        soundPool = new SoundPool(32, AudioManager.STREAM_MUSIC, 0);
+    }
+
+    public SoundPool accessSoundPool(){
+       return soundPool;
+    }
+
+    <div>Two things: (1) It would be better to provide a getSound(i) method that returns Sound, instead of exposing your internal array. (2) If you do return a collection from a method, use the interface type (List, not ArrayList) with the type parameter specified (List&lt;Sound&gt;, not just List).</div>
+    public ArrayList accessSoundArray (){
+        return mSounds;
+    }
+
+    private void reset() {
+        mSounds.clear();
+        soundPool.release();
+        initiateSound();
+    }
+
+    public void load808Kit(Context context) {
+//        samples taken from <a href="http://hiphopmakers.com/free-808-drum-kit-227-samples" target="_blank">http://hiphopmakers.com/free-<wbr>808-drum-kit-227-samples</a>
+        reset();
+
+        Sound s = new Sound();
+        s.setDescription(&quot;kick&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>kick,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;clap&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>clap,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;snare&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>snare,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;rim&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>rim,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;cowbell&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>cowbell,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;hh_closed&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>hhclosed,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;hh_open&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>hhopen,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;conga_low&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>congalo,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;conga_med&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>congamed,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;conga_hi&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>congahi,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;tom_lo&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>tomlo,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;tom_med&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>tommed,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;tom_hi&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context, R.raw.tomhi,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;cymbal_1&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context, R.raw.cymbal1,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;cymbal_2&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context, R.raw.cymbal2,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;cymbal_3&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context, R.raw.cymbal3,3));
+        mSounds.add(s);
+    }
+
+    public void loadKcKit (Context context) {
+//        Samples taken from <a href="http://www.freesound.org/people/NoiseCollector/packs/161/" target="_blank">http://www.freesound.org/<wbr>people/NoiseCollector/packs/<wbr>161/</a>
+        reset();
+
+        Sound s = new Sound();
+        s.setDescription(&quot;kick&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>kckick,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;double kick&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>kckickdouble,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;kick 2&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>kckick2,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;snare&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>kcsnare,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;snare 2&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>kcsnare2,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;snare 3&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>kcsnare3,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;hi hat&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context, R.raw.kchihat,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;toms&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context, R.raw.kctoms,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;toms 2&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context, R.raw.kctoms2,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;stick&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>kcstick,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;ro to&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>kcroto,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;ro to rim&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>kcrotorim,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;ride&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>kcride,3));
+        mSounds.add(s);
+
+
+        s = new Sound();
+        s.setDescription(&quot;ride2&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>kcride2,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;crash&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>kccrash,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;crash 2&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context, R.raw.kccrash2,3));
+        mSounds.add(s);
+    }
+
+    public void loadDeepHouseKit (Context context) {
+//        Samples taken from <a href="https://www.freesound.org/people/DWSD/packs/11575/" target="_blank">https://www.freesound.org/<wbr>people/DWSD/packs/11575/</a>
+        reset();
+
+        Sound s = new Sound();
+        s.setDescription(&quot;kick&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>dhkick,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;kick 2&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>dhkick2,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;snare&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>dhsnare,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;snare 2&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>dhsnare2,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;clap&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>dhclap,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;clap 2&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>dhclap2,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;hi hat&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context, R.raw.dhhat,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;hi hat 2&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context, R.raw.dhhat2,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;toms&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context, R.raw.dhtom,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;toms 2&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>dhtom2,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;clav&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>dhclav,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;perc&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>dhperc,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;perc 2&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>dhperc2,3));
+        mSounds.add(s);
+
+
+        s = new Sound();
+        s.setDescription(&quot;rim&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>dhrim,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;rim 2&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context,R.raw.<wbr>dhrim2,3));
+        mSounds.add(s);
+
+        s = new Sound();
+        s.setDescription(&quot;ride&quot;);
+        s.setSoundResourceId(<wbr>soundPool.load(context, R.raw.dhride,3));
+        mSounds.add(s);
+    }
+}
+</div><h2><span>app/src/main/java/edu/<wbr>dkim2macalester/stepsequencer/<wbr>view/</span>GridItemAdapter.java</h2><div>package edu.dkim2macalester.<wbr>stepsequencer.view;
+
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+
+import edu.dkim2macalester.<wbr>stepsequencer.R;
+
+
+/**
+ * Created by Benas on 3/4/2015.
+ */
+public class GridItemAdapter extends BaseAdapter{
+
+    private Context mContext;
+
+    private int gridWidth = 16;
+    private int gridHeight = 16;
+
+    private Integer[] values = new Integer[gridWidth*gridHeight];
+
+
+
+
+    public GridItemAdapter(Context c) {
+        this.mContext = c;
+        initValues();
+    }
+
+    <div>Call it setDrawableID(); edit implies it will create an edit UI or something</div>
+    public void editDrawableID(int position, Integer drawableID){
+        values[position] = drawableID;
+    }
+
+    // create a new View (Button) for each item referenced by the Adapter
+    public View getView(int position, View convertView, ViewGroup arg2) {
+        final View view;
+        if (convertView==null)
+        {
+            view = new SquareImageView(mContext);
+        }
+        else
+        {
+            view = convertView;
+        }
+        view.setBackgroundResource(<wbr>values[position]);
+        return view;
+    }
+
+
+    public long getItemId(int position) {
+        return 0;
+    }
+
+
+    public int getCount() {
+        return values.length;
+    }
+
+
+    public Object getItem(int position) {
+        return values[position];
+    }
+
+
+    public void initValues(){
+        for (int i=0;i&lt;gridHeight*gridWidth;i++<wbr>){
+            this.values[i]= R.drawable.white_frame;
+        }
+    }
+
+
+
+
+}
+</div>
+
+          </div>
+        
+</body></html>
